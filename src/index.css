@@ -8,8 +8,24 @@
   @apply bg-gradient-to-r from-green-400 via-red-200 to-fuchsia-800 flex-col gap-3 min-h-screen w-full flex items-center justify-center text-center
 } */
 
+:root{
+  --theme-1: #ddffc6;
+}
+
 *{
   font-family:"Kanit","cursive","serif" ;
+}
+
+body::-webkit-scrollbar{
+  display: none;
+}
+
+body{
+  @apply bg-[#fdf8c6] bg-color
+}
+
+.bg-color{
+  @apply bg-gradient-to-br  from-[#fff0be] to-[#d8ffbe] 
 }
 
 .hero-btn {
@@ -54,6 +70,18 @@
 
 .btn-hover{
   @apply active:scale-95 transition-all ease-in-out;
+}
+
+.bounce-reverse{
+  animation: rev-ping 1s cubic-bezier(0, 0, 0.2, 1) reverse;
+}
+
+
+@keyframes rev-ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
 }
 
 /* ellipsis loader */
