@@ -2,6 +2,11 @@ export function ScrollToFrom() {
     let id: number | null = null;
     id && clearTimeout(id);
 
+    if (location.pathname !== "/") {
+        window.location.pathname = "/";
+        return;
+    };
+
     const anime = `bounce-reverse` as const;
     const el = document.querySelector("#reg-from");
     if (!el) return;

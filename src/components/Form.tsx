@@ -1,8 +1,10 @@
+import { Link, useNavigate } from "react-router-dom";
 import Input from "./Input";
+
 interface InputProps extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     label: string,
     classes?: string;
-}
+};
 
 const inputs: InputProps[] = [{
     type: "email",
@@ -18,12 +20,14 @@ const inputs: InputProps[] = [{
     minLength: 5,
     maxLength: 30,
     required: true,
-}]
+}];
 
 export default function UserForm() {
+    const route = useNavigate();
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
+        route("/success");
         return;
     };
 
